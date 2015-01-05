@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "actionEventListener"}
+                }
+            ]
+        },
+        "actionEventListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "loginActionHandler",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "loginButton": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "loginButton"},
+                "enabled": true,
+                "label": "Login"
+            }
+        },
+        "passwordInput": {
+            "prototype": "digit/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "passwordInput"},
+                "placeholderValue": "Enter Password"
+            }
+        },
+        "usernameInput": {
+            "prototype": "digit/ui/text-field.reel",
+            "properties": {
+                "element": {"#": "usernameInput"},
+                "placeholderValue": "Enter Username"
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="Login">
+        <input data-montage-id="usernameInput" type="text">
+        <input data-montage-id="passwordInput" type="text">
+        <button data-montage-id="loginButton"></button>
+    </div>
+</body>
+</html>
