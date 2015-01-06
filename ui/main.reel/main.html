@@ -17,6 +17,11 @@
                     "type": "loginEvent",
                     "useCapture": false,
                     "listener": {"@": "actionEventListener"}
+                },
+                {
+                    "type": "action",
+                    "useCapture": false,
+                    "listener": {"@": "logoutButtonListener"}
                 }
             ]
         },
@@ -24,7 +29,8 @@
             "prototype": "montage/core/event/action-event-listener",
             "properties": {
                 "action": "handleLogin",
-                "handler": {"@": "owner"}
+                "handler": {"@": "owner"},
+                "removalStrategy": "hide"
             },
             "_dev": {
                 "isHidden": true
@@ -42,6 +48,31 @@
                 "element": {"#": "login"}
             }
         },
+        "logoutButton": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "logoutButton"},
+                "enabled": true,
+                "label": "Logout"
+            }
+        },
+        "logoutButtonListener": {
+            "prototype": "montage/core/event/action-event-listener",
+            "properties": {
+                "action": "logoutActionHandler",
+                "handler": {"@": "owner"}
+            },
+            "_dev": {
+                "isHidden": true
+            }
+        },
+        "logoutCondition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "logoutCondition"},
+                "removalStrategy": "remove"
+            }
+        },
         "substitution": {
             "prototype": "montage/ui/substitution.reel",
             "properties": {
@@ -54,6 +85,9 @@
 </head>
 <body>
     <div data-montage-id="main" data-montage-skin="light" class="Main">
+        <div data-montage-id="logoutCondition">
+            <button data-montage-id="logoutButton"></button>
+        </div>
         <div data-montage-id="substitution">
             <div data-montage-id="login" data-arg="login"></div>
             <div data-montage-id="default" data-arg="default"></div>
