@@ -21,6 +21,9 @@
             "prototype": "ui/storm-list-item.reel",
             "properties": {
                 "element": {"#": "highlightedStorm"}
+            },
+            "bindings": {
+                "stormData": {"<-": "@stormList.selection"}
             }
         },
         "stormController": {
