@@ -17,6 +17,12 @@
                 "value": "hello"
             }
         },
+        "highlightedStorm": {
+            "prototype": "ui/storm-list-item.reel",
+            "properties": {
+                "element": {"#": "highlightedStorm"}
+            }
+        },
         "stormController": {
             "prototype": "montage/core/range-controller",
             "properties": {
@@ -47,6 +53,7 @@
 </head>
 <body>
     <div data-montage-id="owner" class="Default">
+        <div data-montage-id="highlightedStorm"></div>
         <p data-montage-id="greetingText"></p>
         <ul data-montage-id="stormList">
             <div data-montage-id="stormListItem"></div>
