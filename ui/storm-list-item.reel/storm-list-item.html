@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="storm-list-item.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+        "removeButton": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "removeButton"},
+                "enabled": true,
+                "label": "Remove"
+            }
+        },
+        "stormName": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "stormName"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@owner.stormData.name"}
+            }
+        },
+        "stormNameLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "stormNameLabel"},
+                "value": "Name:"
+            }
+        },
+        "stormType": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "stormType"},
+                "value": "Text"
+            },
+            "bindings": {
+                "value": {"<-": "@owner.stormData.type"}
+            }
+        },
+        "stormTypeLabel": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "stormTypeLabel"},
+                "value": "Type:"
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="StormListItem">
+        <p data-montage-id="stormNameLabel" style="display:inline-block"></p>
+        <p data-montage-id="stormName" style="display:inline-block"></p>
+        <p data-montage-id="stormTypeLabel" style="display:inline-block"></p>
+        <p data-montage-id="stormType" style="display:inline-block"></p>
+        <button data-montage-id="removeButton" style="display:inline-block"></button>
+    </div>
+</body>
+</html>

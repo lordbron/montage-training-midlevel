@@ -26,20 +26,20 @@
         "stormList": {
             "prototype": "montage/ui/repetition.reel",
             "properties": {
-                "element": {"#": "stormList"}
+                "element": {"#": "stormList"},
+                "isSelectionEnabled": false
             },
             "bindings": {
                 "contentController": {"<-": "@stormController"}
             }
         },
-        "stormName": {
-            "prototype": "montage/ui/text.reel",
+        "stormListItem": {
+            "prototype": "ui/storm-list-item.reel",
             "properties": {
-                "element": {"#": "stormName"},
-                "value": "Text"
+                "element": {"#": "stormListItem"}
             },
             "bindings": {
-                "value": {"<-": "@stormList:iteration.object.name"}
+                "stormData": {"<-": "@stormList:iteration.object"}
             }
         }
     }
@@ -49,7 +49,7 @@
     <div data-montage-id="owner" class="Default">
         <p data-montage-id="greetingText"></p>
         <ul data-montage-id="stormList">
-            <p data-montage-id="stormName"></p>
+            <div data-montage-id="stormListItem"></div>
         </ul>
     </div>
 </body>
